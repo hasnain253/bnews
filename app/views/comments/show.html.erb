@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @comment %>
+
+<div>
+  <%= link_to "Edit this comment", edit_comment_path(@comment) %> |
+  <%= link_to "Back to comments", comments_path %>
+
+  <%= button_to "Destroy this post", @post, method: :delete ,data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure You want to Delete this comment?"
+  } %>
+</div>
