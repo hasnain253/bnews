@@ -14,7 +14,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '026eb332fffc59c046632a9db42e78a74dfe1e4825f057b1ea45348280a870aa59a9c4180c792a96a0773b7fa76882e2bd3c3349a9f4e092f62e16001676ecb7'
+  # config.secret_key = '0d8aa9bf38e6f3964000721167b3384720875378ef0e2e8a6e72666ce810945b7bfc4ca3fa0c9625e3928f3dc4b0a93abb87bfd3d3b04c43e4793eaba03766ea'
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -27,8 +28,8 @@ Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
-  # config.mailer = 'Devise::Mailer'
-  
+   config.mailer = 'Devise::Mailer'
+
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
 
@@ -126,13 +127,13 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'fd80560218b80afbe423e298579c01c7f1ae9fab7ff86c026b2420fc138ba073be99f0cfb62a6bbdb9c53dd81a659bc8e959a2f017a7b917ffbfb80a27fd591c'
+  # config.pepper = 'cb79a1c28199837ddbb0d56a2d62b1ab9fbc589aa941be0837066efb4f41ae24db87741780f21099eda869f46542887ccdef5419294f76781b1813e277305aeb'
 
   # Send a notification to the original email when the user's email is changed.
-  # config.send_email_changed_notification = false
+   config.send_email_changed_notification = false
 
   # Send a notification email when the user's password is changed.
-  # config.send_password_change_notification = false
+   config.send_password_change_notification = false
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -178,7 +179,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 8..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
