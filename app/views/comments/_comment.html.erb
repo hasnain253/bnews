@@ -3,4 +3,14 @@
     <strong>Comment:</strong>
     <%= comment.comment %>
   </p>
+
+  <p>
+  <strong>created_at:</strong>
+  <%= comment.created_at %>
+</p>
+
+  <%= button_to "Destroy this comment", comment, method: :delete ,data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure You want to Delete this comment?"
+  } %>
 </div>
