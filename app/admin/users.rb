@@ -29,7 +29,9 @@ ActiveAdmin.register User do
     id_column
     column :email
     column :avatar do |user|
-      image_tag(user.avatar.variant(resize_to_fill: [50, 50])) if user.avatar.attached?
+      if user.avatar.attached? && user.avatar.variable?
+        image_tag(user.avatar.variant(resize_to_fit: [50, 50]))
+      end
     end
     column :created_at
     column :updated_at
